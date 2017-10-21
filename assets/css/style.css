@@ -3,3 +3,12 @@
   width: 360px;
   border: 2px solid gray;
 }
+
+li  {
+  cursor: pointer;
+}
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
