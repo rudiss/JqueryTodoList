@@ -5,31 +5,65 @@
   <meta charset="utf-8">
   <title>Todo List</title>
   <link rel="shortcut icon" type="image/x-icon" href="assets/favicons/todo.png">
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
 
 
 
-<div class="container">
-  <h1>To-Do List</h1>
-  <input type="text" name="" value="">
+<div id="container" class="mdl-shadow--2dp">
+  <h1>To-Do List <i id="demo-show-snackbar"
+    class="fa fa-exclamation-circle red" style="font-size:18px"></i>
+    <i class="material-icons" style="float:right">note_add</i>
+  </h1>
+  <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+  <input type="text" placeholder="Get stuff done..">
 
   <ul>
-    <li><span>X</span> Finish Webbootcam</li>
-    <li><span>X</span> Finish React Couse</li>
-    <li><span>X</span> Finish Nodejs project</li>
-  </ul>
-</div>
 
+    <li><span><i class="fa fa-trash"></i></span> Learn Go language</li>
+    <li><span><i class="fa fa-trash"></i></span> Buy coffe tomorrow</li>
+    <li><span><i class="fa fa-trash"></i></span> Finish Mozilla project</li>
+    <li><span><i class="fa fa-trash"></i></span> Make a React Native App</li>
+    <li><span><i class="fa fa-trash"></i></span> Text Tim Cook for new iphone X</li>
+
+  </ul>
+
+</div>
 
 
   <script type="text/javascript" src="assets/js/lib/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="assets/js/todo.js"></script>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<script>
+(function() {
+  'use strict';
+  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+  var handler = function(event) {
+    showSnackbarButton.style.backgroundColor = '';
+  };
+  showSnackbarButton.addEventListener('click', function() {
+    'use strict';
+    var data = {
+      message: 'Click on task to complete!',
+      timeout: 2000,
+      actionHandler: handler,
+      actionText: 'Close'
+    };
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
 </body>
 
 </html>
